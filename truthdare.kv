@@ -1,0 +1,28 @@
+<MainScreen>:
+	BoxLayout:
+		
+		orientation: 'vertical'
+		Label:
+			text: "Welcome to the Truth and Dare Game, tap on either truth or dare to begin"
+		GridLayout:
+			rows: 2
+			Button:
+				text: "Truth"
+				on_release: root.manager.current = 'truth'
+			Button: 
+				text: "Dare"
+				on_release: root.manager.current = 'dare'
+
+<TruthScreen>:
+	BoxLayout:
+		
+		on_touch_down: root.manager.current = 'main'
+		Label:
+			text: root.truths
+			
+<DareScreen>:
+	BoxLayout:
+		
+		on_touch_down: root.manager.current = 'main'
+		Label:
+			text: root.dares
